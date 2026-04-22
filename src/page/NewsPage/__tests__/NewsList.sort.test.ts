@@ -1,7 +1,10 @@
 import { describe, it, expect } from "vitest";
 import * as fc from "fast-check";
 import { sortByDateDescending } from "../NewsList";
-import { CATEGORY_BADGE, type NewsItem } from "../../../common/Body/News/type";
+import {
+  CATEGORY_BADGE,
+  type NewsItem,
+} from "../../../common/Body/NewsSection/type";
 
 /**
  * Feature: news-page
@@ -43,19 +46,22 @@ const newsItemArbitrary: fc.Arbitrary<NewsItem> = fc.record({
 describe("Feature: news-page, Property 1: News items are sorted by date descending", () => {
   it("should sort any array of NewsItems by date descending (newest first)", () => {
     fc.assert(
-      fc.property(fc.array(newsItemArbitrary, { minLength: 0, maxLength: 30 }), (items) => {
-        const sorted = sortByDateDescending(items);
+      fc.property(
+        fc.array(newsItemArbitrary, { minLength: 0, maxLength: 30 }),
+        (items) => {
+          const sorted = sortByDateDescending(items);
 
-        // Same length
-        expect(sorted.length).toBe(items.length);
+          // Same length
+          expect(sorted.length).toBe(items.length);
 
-        // Each item's date >= next item's date
-        for (let i = 0; i < sorted.length - 1; i++) {
-          const current = parseDDMMYYYY(sorted[i].date).getTime();
-          const next = parseDDMMYYYY(sorted[i + 1].date).getTime();
-          expect(current).toBeGreaterThanOrEqual(next);
-        }
-      }),
+          // Each item's date >= next item's date
+          for (let i = 0; i < sorted.length - 1; i++) {
+            const current = parseDDMMYYYY(sorted[i].date).getTime();
+            const next = parseDDMMYYYY(sorted[i + 1].date).getTime();
+            expect(current).toBeGreaterThanOrEqual(next);
+          }
+        },
+      ),
       { numRuns: 100 },
     );
   });

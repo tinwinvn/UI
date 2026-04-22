@@ -2,7 +2,10 @@ import { describe, it, expect, afterEach } from "vitest";
 import { render, cleanup } from "@testing-library/react";
 import * as fc from "fast-check";
 import { NewsCard } from "../NewsCard";
-import { CATEGORY_BADGE, type NewsItem } from "../../../common/Body/News/type";
+import {
+  CATEGORY_BADGE,
+  type NewsItem,
+} from "../../../common/Body/NewsSection/type";
 
 /**
  * Feature: news-page
@@ -21,7 +24,9 @@ const categoryKeys = Object.keys(CATEGORY_BADGE);
 
 const newsItemArbitrary: fc.Arbitrary<NewsItem> = fc.record({
   id: fc.integer({ min: 1, max: 10000 }),
-  title: fc.string({ minLength: 3, maxLength: 100 }).filter((s) => s.trim().length > 2),
+  title: fc
+    .string({ minLength: 3, maxLength: 100 })
+    .filter((s) => s.trim().length > 2),
   excerpt: fc.string({ minLength: 1, maxLength: 300 }),
   date: fc
     .tuple(
@@ -44,7 +49,12 @@ describe("Feature: news-page, Property 2: NewsCard renders all required fields",
       fc.property(newsItemArbitrary, (item: NewsItem) => {
         cleanup();
         const { container } = render(
-          <NewsCard item={item} isSelected={false} index={0} onClick={() => {}} />,
+          <NewsCard
+            item={item}
+            isSelected={false}
+            index={0}
+            onClick={() => {}}
+          />,
         );
 
         // Title is present

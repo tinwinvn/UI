@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
-import { CATEGORY_BADGE, type NewsItem } from "../../common/Body/News/type";
+import {
+  CATEGORY_BADGE,
+  type NewsItem,
+} from "../../common/Body/NewsSection/type";
 
 interface ArticleViewProps {
   item: NewsItem | null;
@@ -23,10 +26,7 @@ export const ArticleView = ({ item }: ArticleViewProps) => {
   }
 
   return (
-    <article
-      key={item.id}
-      className="animate-[fadeIn_300ms_ease-out]"
-    >
+    <article key={item.id} className="animate-[fadeIn_300ms_ease-out]">
       <div className="overflow-hidden rounded-xl mb-6">
         <img
           src={item.imageUrl}
@@ -69,9 +69,7 @@ export const ArticleView = ({ item }: ArticleViewProps) => {
         {item.title}
       </h1>
 
-      <p className="text-base text-gray-700 leading-relaxed">
-        {item.excerpt}
-      </p>
+      <p className="text-base text-gray-700 leading-relaxed">{item.excerpt}</p>
     </article>
   );
 };
