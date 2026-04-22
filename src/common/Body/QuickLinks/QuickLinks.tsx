@@ -1,4 +1,5 @@
-import { LinkCard } from "./LinkCard";
+import { SectionHeader } from "../SectionHeader";
+import { QuickLinkCard } from "./QuickLinkCard";
 import type { QuickLink } from "./type";
 
 const QUICK_LINKS: QuickLink[] = [
@@ -11,7 +12,7 @@ const QUICK_LINKS: QuickLink[] = [
       "bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white",
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-7 h-7"
         fill="none"
         stroke="currentColor"
         strokeWidth={1.8}
@@ -34,7 +35,7 @@ const QUICK_LINKS: QuickLink[] = [
       "bg-emerald-100 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white",
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-7 h-7"
         fill="none"
         stroke="currentColor"
         strokeWidth={1.8}
@@ -57,7 +58,7 @@ const QUICK_LINKS: QuickLink[] = [
       "bg-violet-100 text-violet-600 group-hover:bg-violet-600 group-hover:text-white",
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-7 h-7"
         fill="none"
         stroke="currentColor"
         strokeWidth={1.8}
@@ -80,7 +81,7 @@ const QUICK_LINKS: QuickLink[] = [
       "bg-orange-100 text-orange-600 group-hover:bg-orange-600 group-hover:text-white",
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-7 h-7"
         fill="none"
         stroke="currentColor"
         strokeWidth={1.8}
@@ -103,7 +104,7 @@ const QUICK_LINKS: QuickLink[] = [
       "bg-sky-100 text-sky-600 group-hover:bg-sky-600 group-hover:text-white",
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-7 h-7"
         fill="none"
         stroke="currentColor"
         strokeWidth={1.8}
@@ -126,7 +127,7 @@ const QUICK_LINKS: QuickLink[] = [
       "bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white",
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-7 h-7"
         fill="none"
         stroke="currentColor"
         strokeWidth={1.8}
@@ -142,14 +143,14 @@ const QUICK_LINKS: QuickLink[] = [
   },
   {
     id: 7,
-    label: "Bản Đồ Campus",
-    desc: "Sơ đồ tòa nhà, phòng học, tiện ích",
-    colorClass: "hover:border-teal-400 hover:bg-teal-50",
+    label: "Thanh Toán Học Phí",
+    desc: "Tra cứu, đóng học phí trực tuyến",
+    colorClass: "hover:border-pink-400 hover:bg-pink-50",
     iconBg:
-      "bg-teal-100 text-teal-600 group-hover:bg-teal-600 group-hover:text-white",
+      "bg-pink-100 text-pink-600 group-hover:bg-pink-600 group-hover:text-white",
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-7 h-7"
         fill="none"
         stroke="currentColor"
         strokeWidth={1.8}
@@ -158,7 +159,7 @@ const QUICK_LINKS: QuickLink[] = [
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+          d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
         />
       </svg>
     ),
@@ -172,7 +173,7 @@ const QUICK_LINKS: QuickLink[] = [
       "bg-indigo-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white",
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-7 h-7"
         fill="none"
         stroke="currentColor"
         strokeWidth={1.8}
@@ -191,88 +192,21 @@ const QUICK_LINKS: QuickLink[] = [
       </svg>
     ),
   },
-  {
-    id: 9,
-    label: "Thanh Toán Học Phí",
-    desc: "Tra cứu, đóng học phí trực tuyến",
-    colorClass: "hover:border-pink-400 hover:bg-pink-50",
-    iconBg:
-      "bg-pink-100 text-pink-600 group-hover:bg-pink-600 group-hover:text-white",
-    icon: (
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.8}
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-        />
-      </svg>
-    ),
-  },
-  {
-    id: 10,
-    label: "Hợp Tác Quốc Tế",
-    desc: "Trao đổi, du học, học bổng nước ngoài",
-    colorClass: "hover:border-cyan-400 hover:bg-cyan-50",
-    iconBg:
-      "bg-cyan-100 text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white",
-    icon: (
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.8}
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-        />
-      </svg>
-    ),
-  },
 ];
 
-export const Linked = () => {
-  return (
-    <div className="bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col h-full overflow-hidden">
-      <div className="bg-[#0054a5] px-5 py-4 flex items-center justify-between shrink-0">
-        <div className="flex items-center gap-3">
-          <svg
-            className="w-5 h-5 text-white"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-            />
-          </svg>
-          <h2 className="text-white font-bold tracking-wider text-base uppercase">
-            Liên Kết Hữu Ích
-          </h2>
-        </div>
-        <span className="text-blue-200 text-xs font-medium">
-          {QUICK_LINKS.length} dịch vụ
-        </span>
-      </div>
-
-      <div className="flex-1 min-h-0 overflow-y-auto p-4">
-        <div className="grid grid-cols-2 gap-3">
-          {QUICK_LINKS.map((link, i) => (
-            <LinkCard key={link.id} link={link} index={i} />
-          ))}
-        </div>
+export const QuickLinks = () => (
+  <section className="py-12 md:py-16 px-4">
+    <div className="max-w-7xl mx-auto">
+      <SectionHeader
+        tag="Truy cập nhanh"
+        title="Liên Kết Hữu Ích"
+        description="Truy cập nhanh các dịch vụ và tiện ích dành cho sinh viên, giảng viên và cán bộ."
+      />
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+        {QUICK_LINKS.map((link, i) => (
+          <QuickLinkCard key={link.id} link={link} index={i} />
+        ))}
       </div>
     </div>
-  );
-};
+  </section>
+);

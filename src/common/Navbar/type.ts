@@ -11,3 +11,10 @@ export type subItems = {
   path: string;
   isActive?: boolean;
 };
+
+export type NotifPreview = {
+  id: number;
+  title: string;
+  date: string;
+  isNew: boolean;
+};
