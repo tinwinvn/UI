@@ -1,9 +1,9 @@
-import type { NewsItem } from "../common/Body/News/type";
 import UniversityImg from "../assets/DHKT.png";
 import Workday from "../assets/ufi2287.png";
 import HeroImg from "../assets/hero.png";
 import SeminarImg from "../assets/backdrop-hoi-nghi-khoa-hoc-phat-trien-ben-vung-thu-du-ha-noi-a25021704.jpg";
 import NewsImg from "../assets/images.jpg";
+import type { NewsItem } from "../common/Body/NewsSection/type";
 
 export const ALL_NEWS: NewsItem[] = [
   {

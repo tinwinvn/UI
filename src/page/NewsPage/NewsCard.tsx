@@ -1,4 +1,7 @@
-import { CATEGORY_BADGE, type NewsItem } from "../../common/Body/News/type";
+import {
+  CATEGORY_BADGE,
+  type NewsItem,
+} from "../../common/Body/NewsSection/type";
 
 interface NewsCardProps {
   item: NewsItem;
@@ -7,7 +10,12 @@ interface NewsCardProps {
   onClick: () => void;
 }
 
-export const NewsCard = ({ item, isSelected, index, onClick }: NewsCardProps) => {
+export const NewsCard = ({
+  item,
+  isSelected,
+  index,
+  onClick,
+}: NewsCardProps) => {
   return (
     <div
       role="button"

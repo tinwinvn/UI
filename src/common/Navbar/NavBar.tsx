@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import type { MenuItem } from "./type";
 import Logo from "../../assets/react.svg";
 import SearchIcon from "../../assets/search-01-stroke-rounded.svg";
+import { NotificationBell } from "./NotificationBell";
 
 const premenuItems: MenuItem[] = [
   { label: "SINH VIÊN", path: "/sinh-vien" },
@@ -106,7 +107,7 @@ export const NavBar = () => {
 
           <div className="flex items-center gap-4">
             <div className="hidden lg:flex flex-col items-end space-y-2">
-              <div className="flex space-x-5 text-[11px] font-semibold uppercase tracking-wide">
+              <div className="flex items-center space-x-5 text-[11px] font-semibold uppercase tracking-wide">
                 {premenuItems.map((item) => (
                   <NavLink
                     key={item.label}
@@ -116,6 +117,7 @@ export const NavBar = () => {
                     {item.label}
                   </NavLink>
                 ))}
+                <NotificationBell />
               </div>
               <div className="relative flex items-center">
                 <input
@@ -129,6 +131,10 @@ export const NavBar = () => {
                   alt="search"
                 />
               </div>
+            </div>
+
+            <div className="lg:hidden">
+              <NotificationBell />
             </div>
 
             <div className="hidden md:flex lg:hidden relative items-center">
