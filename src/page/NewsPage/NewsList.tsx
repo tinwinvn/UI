@@ -1,28 +1,22 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import type { NewsItem } from "../../common/Body/News/type";
+
 import { NewsCard } from "./NewsCard";
+import type { NewsItem } from "../../common/Body/NewsSection/type";
 
 interface NewsListProps {
   items: NewsItem[];
   selectedId: number;
 }
 
-/**
- * Parse a "DD/MM/YYYY" date string into a comparable Date object.
- */
 function parseDDMMYYYY(dateStr: string): Date {
   const [day, month, year] = dateStr.split("/").map(Number);
   return new Date(year, month - 1, day);
 }
 
-/**
- * Sort NewsItem[] by date descending (newest first).
- * Exported for testing.
- */
 export function sortByDateDescending(items: NewsItem[]): NewsItem[] {
   return [...items].sort(
-    (a, b) => parseDDMMYYYY(b.date).getTime() - parseDDMMYYYY(a.date).getTime()
+    (a, b) => parseDDMMYYYY(b.date).getTime() - parseDDMMYYYY(a.date).getTime(),
   );
 }
 

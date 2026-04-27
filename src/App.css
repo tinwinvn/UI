@@ -21,6 +21,16 @@
   to   { opacity: 1; }
 }
 
+@keyframes growX {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes growY {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
 .animate-slide-up          { animation: slideUp   0.65s ease-out          forwards; }
 .animate-slide-up-d1       { animation: slideUp   0.65s ease-out 0.12s    forwards; opacity: 0; }
 .animate-slide-up-d2       { animation: slideUp   0.65s ease-out 0.24s    forwards; opacity: 0; }
@@ -31,6 +41,8 @@
 .animate-scale-in-d1       { animation: scaleIn   0.5s  ease-out 0.10s    forwards; opacity: 0; }
 .animate-scale-in-d2       { animation: scaleIn   0.5s  ease-out 0.20s    forwards; opacity: 0; }
 .animate-scale-in-d3       { animation: scaleIn   0.5s  ease-out 0.30s    forwards; opacity: 0; }
+.animate-grow-x            { animation: growX     0.5s  ease-out          forwards; }
+.animate-grow-y            { animation: growY     0.4s  ease-out          forwards; }
 
 .counter {
   font-size: 16px;
