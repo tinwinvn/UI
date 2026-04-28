@@ -30,7 +30,7 @@ export const TimelineStep = ({
           {step}
         </div>
         {!isLast && (
-          <div className="w-0.5 h-full min-h-[40px] bg-linear-to-b from-orange-300 to-cyan-200 mt-2" />
+          <div className="w-0.5 h-full min-h-10 bg-linear-to-b from-orange-300 to-cyan-200 mt-2" />
         )}
       </div>
 
